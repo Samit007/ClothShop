@@ -1,4 +1,4 @@
-package com.example.clothshopapp;
+package com.example.onlineclothshop;
 
 import android.content.Intent;
 import android.os.Handler;
