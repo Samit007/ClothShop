@@ -3,22 +3,26 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp">
+android:background="@drawable/background"
+android:layout_gravity="center">
     <ImageView
             android:id="@+id/imgItemPic"
-            android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="50dp"/>
 
     <TextView
             android:id="@+id/tvItemName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="100dp"
             android:fontFamily="sans-serif-black"
-            android:textColor="#2BB4DB"
+            android:textColor="#FFFFFF"
             android:textAllCaps="true"
             android:hint="Item Name"
-            android:textSize="40sp"
+            android:paddingLeft="20dp"
+            android:textSize="25sp"
             android:layout_toRightOf="@+id/imgItemPic"/>
 
 

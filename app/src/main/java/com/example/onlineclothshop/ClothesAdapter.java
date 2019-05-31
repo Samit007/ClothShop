@@ -58,6 +58,7 @@ class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ClothesViewHold
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(mContext, Description.class);
+                i.putExtra("itemImage",imgPath);
                 i.putExtra("itemName", clothes.getItemname());
                 i.putExtra("price", clothes.getItemprice());
                 i.putExtra("description", clothes.getItemdesc());

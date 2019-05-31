@@ -6,57 +6,94 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               tools:context=".Description"
-              android:layout_gravity="center">
-
-    <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_marginTop="50dp"
-            android:id="@+id/circleImg_description"
-            android:layout_gravity="center"
-            android:layout_width="200dp"
-            android:layout_height="200dp"/>
-    <GridLayout
+              android:background="@drawable/background">
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:rowCount="3"
-            android:gravity="center"
-            android:layout_gravity="center">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:padding="16dp"
+                android:src="@drawable/logo"/>
 
-        <TextView
-                android:text="Item Name:"
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginTop="20dp"
+                android:id="@+id/circleImg_description"
                 android:layout_gravity="center"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:textSize="30sp"/>
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+
         <TextView
                 android:id="@+id/tvItemName_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:hint="Item name"
+                android:layout_marginLeft="20dp"
                 android:layout_gravity="center"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:textSize="30sp"/>
-        <TextView
-                android:text="Price:"
-                android:layout_gravity="center"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:textSize="30sp"/>
+                android:maxLines="1"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                android:drawablePadding="8dp"/>
+        <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="#f9d7db"
+                android:layout_marginLeft="35dp"/>
+
         <TextView
                 android:id="@+id/tvPrice_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:textSize="30sp"/>
+                android:hint="Item Price"
+                android:maxLines="1"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                android:drawablePadding="8dp"/>
+        <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="#f9d7db"
+                android:layout_marginLeft="35dp"/>
+
         <TextView
-                android:text="Description:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:textSize="30sp"/>
-        <TextView
                 android:id="@+id/tvDescription_description"
-                android:layout_gravity="center"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:textSize="30sp"/>
-    </GridLayout>
+                android:hint="Description"
+                android:maxLines="1"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                android:drawablePadding="8dp"
+        />
+        <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="#f9d7db"
+                android:layout_marginLeft="35dp"/>
+    </LinearLayout>
 </LinearLayout>

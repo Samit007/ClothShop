@@ -23,7 +23,8 @@ import url.Url;
 
 public class Dashboard extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private Button btn,back;
+
+    private FloatingActionButton btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,6 @@ public class Dashboard extends AppCompatActivity {
 //        setSupportActionBar(toolbar);
 
         btn=findViewById(R.id.btn);
-        back=findViewById(R.id.back);
 
         recyclerView = findViewById(R.id.recyclerView);
 

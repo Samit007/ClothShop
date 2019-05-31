@@ -5,7 +5,8 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context=".AddItem">
+              tools:context=".AddItem"
+              android:background="@drawable/background">
     <android.support.v7.widget.Toolbar
             android:id="@+id/my_toolbar"
             android:layout_width="match_parent"
@@ -16,61 +17,93 @@
             app:titleTextColor="#FFFFFF"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
-    <ImageView
-            android:id="@+id/ivImage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginBottom="20dp"
-            android:layout_gravity="center"
-            android:background="@drawable/img"
-
-    />
-    <EditText
-            android:id="@+id/etItemName"
-            android:hint="Enter Item"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:inputType="text"
-            android:textAllCaps="true"
-    />
-    <EditText
-            android:id="@+id/etItemPrice"
-            android:hint="Enter Price"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-    />
-
-    <EditText
-            android:id="@+id/etItemDescription"
-            android:hint="Enter Description"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-    />
     <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp">
-
-        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:id="@+id/back"
-                android:text="add"/>
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
 
 
+        <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"
+                android:background="@drawable/img"
+
+        />
+        <EditText
+                android:id="@+id/etItemName"
+                android:hint="Enter Item"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:inputType="text"
+                android:textAllCaps="true"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:textColorHint="#FFF"
+        />
+        <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="#f9d7db"
+                android:layout_marginLeft="35dp"/>
+        <EditText
+                android:id="@+id/etItemPrice"
+                android:hint="Enter Price"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:textColorHint="#FFF"
+        />
+        <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="#f9d7db"
+                android:layout_marginLeft="35dp"/>
+
+        <EditText
+                android:id="@+id/etItemDescription"
+                android:hint="Enter Description"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:textColorHint="#FFF"
+        />
+        <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="#f9d7db"
+                android:layout_marginLeft="35dp"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+            <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/back"
+                    android:text="add"/>
+
+
+
+        </LinearLayout>
     </LinearLayout>
-
 
 </LinearLayout>

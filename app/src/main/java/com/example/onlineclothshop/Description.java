@@ -31,8 +31,10 @@ public class Description extends AppCompatActivity {
             tvName.setText(bundle.getString("itemName"));
             tvPrice.setText(bundle.getString("price"));
             tvDescription.setText(bundle.getString("description"));
-            String a = bundle.getString("image");
+
+            String a = bundle.getString("itemImage");
             StrictMode();
+
             try{
                 URL url = new URL(a);
                 img.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));

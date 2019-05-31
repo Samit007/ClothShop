@@ -69,35 +69,7 @@ public class AddItem extends AppCompatActivity {
                 BrowseImage();
             }
         });
-
-
     }
-
-    private void SaveItem() {
-
-        SaveImageOnly();
-        ClothesApi clothesApi = Url.getInstance().create(ClothesApi.class);
-        String itemName = etItemName.getText().toString();
-        String itemPrice = etItemPrice.getText().toString();
-        String itemDescription = etItemDescription.getText().toString();
-        String itemImageName = imageName;
-        Clothes clothes = new Clothes(itemName,itemPrice,itemDescription,itemImageName);
-        Call<Void> listCall = clothesApi.addItems(clothes);
-//                addFieldItems(itemName,itemPrice,itemImageName,itemDescription);
-
-        listCall.enqueue(new Callback<Void>() {
-            @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
-                Toast.makeText(AddItem.this, "Added Item Successfully", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<Void> call, Throwable t) {
-                Toast.makeText(AddItem.this, "Item Not Added", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
     private void BrowseImage(){
         Intent i = new Intent(Intent.ACTION_PICK);
         i.setType("image/*");
@@ -115,11 +87,11 @@ public class AddItem extends AppCompatActivity {
         Uri uri = data.getData();
         imagePath = getRealPathFromUri(uri);
         previewImage(imagePath);
-//        etItemName.setText(imagePath);
     }
     private String getRealPathFromUri(Uri uri) {
         String[] projection = {MediaStore.Images.Media.DATA};
-        CursorLoader loader = new CursorLoader(getApplicationContext(), uri, projection,null,null,null);
+        CursorLoader loader = new CursorLoader(getApplicationContext(), uri,
+                projection,null,null,null);
         Cursor cursor = loader.loadInBackground();
         int colIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
         cursor.moveToFirst();
@@ -134,12 +106,18 @@ public class AddItem extends AppCompatActivity {
             ivView.setImageBitmap(myBitmap);
         }
     }
+    private void StrictMode(){
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+    }
 
     private void SaveImageOnly() {
         File file = new File(imagePath);
 
-        RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"),file);
-        MultipartBody.Part body = MultipartBody.Part.createFormData("imageFile", file.getName(), requestBody);
+        RequestBody requestBody = RequestBody.create
+                (MediaType.parse("multipart/form-data"),file);
+        MultipartBody.Part body = MultipartBody.Part.createFormData
+                ("imageFile", file.getName(), requestBody);
         ClothesApi clothesApi = Url.getInstance().create(ClothesApi.class);
         Call<ImageResponse> responseCall = clothesApi.uploadImage(body);
 
@@ -151,13 +129,31 @@ public class AddItem extends AppCompatActivity {
             Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
-
-
     }
 
-    private void StrictMode(){
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
+    private void SaveItem() {
+
+        SaveImageOnly();
+        ClothesApi clothesApi = Url.getInstance().create(ClothesApi.class);
+        String itemName = etItemName.getText().toString();
+        String itemPrice = etItemPrice.getText().toString();
+        String itemDescription = etItemDescription.getText().toString();
+        String itemImageName = imageName;
+
+        Clothes clothes = new Clothes(itemName,itemPrice,itemDescription,itemImageName);
+        Call<Void> listCall = clothesApi.addItems(clothes);
+
+        listCall.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                Toast.makeText(AddItem.this, "Added Item Successfully", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Toast.makeText(AddItem.this, "Item Not Added", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }
